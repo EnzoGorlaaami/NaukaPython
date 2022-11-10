@@ -4,4 +4,5 @@ dlugoscCiagu = len(baza)
 ostatatniWyraz = len(baza) - 1
 
 
-print(baza[ostatatniWyraz], baza[1:ostatatniWyraz], baza[0])
+print(baza[ostatatniWyraz], baza[1:ostatatniWyraz], baza[0], sep="")
+#print(f"{baza[ostatatniWyraz]}{baza[1:ostatatniWyraz]}{baza[0]}")
