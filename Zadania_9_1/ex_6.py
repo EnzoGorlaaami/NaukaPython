@@ -15,23 +15,22 @@ a = {
 only_string = []
 for keys in a:
     value_list = a[keys]
-
-    if isinstance(value_list, list) == True:
+    if isinstance(value_list, list):
         for i in range(len(value_list)):
-            if isinstance(value_list[i], str) == True:
+            if isinstance(value_list[i], str):
                 only_string.append(value_list[i])
-            elif isinstance(value_list[i], list) == True:
+            elif isinstance(value_list[i], list):
                 x = value_list[i]
                 for j in range(len(x)):
-                    if isinstance(x[j], str) == True:
+                    if isinstance(x[j], str):
                         only_string.append(x[j])
-    elif isinstance(value_list, dict) == True:
+    elif isinstance(value_list, dict):
         y = list(value_list.keys())
-        for k in range(len(y)):
-            z = value_list[y[k]]
-            if isinstance(z, list) == True:
-                for i in range(len(z)):
-                    if isinstance(z[i], str) == True:
-                        only_string.append(z[i])
+        for i in range(len(y)):
+            z = value_list[y[i]]
+            if isinstance(z, list):
+                for j in range(len(z)):
+                    if isinstance(z[j], str):
+                        only_string.append(z[j])
 
 print(only_string)

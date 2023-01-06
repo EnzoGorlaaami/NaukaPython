@@ -23,25 +23,46 @@ bill_items = [
 # ‘Clare’ : {‘potrawy : [‘Bruschetta Originale‘, ‘Fiorentina’, ‘Tiramisu’], ‘cena’ : 20.90},
 # …
 # }
-clients = {}
-price_all = {}
-for i in range(len(bill_items)):
-    dishes = []
-    price = 0
-    if clients.get((bill_items[i])[0], 1) == 1:
-        price += float((bill_items[i])[2])
-        dishes.append((bill_items[i])[1])
-        clients[(bill_items[i])[0]] = dishes
-        price_all[(bill_items[i])[0]] = price
+# clients = {}
+# price_all = {}
+# for i in range(len(bill_items)):
+#     dishes = []
+#     price = 0
+#     if clients.get((bill_items[i])[0], 1) == 1:
+#         price += float((bill_items[i])[2])
+#         dishes.append((bill_items[i])[1])
+#         clients[(bill_items[i])[0]] = dishes
+#         price_all[(bill_items[i])[0]] = price
+#     else:
+#         price += float((bill_items[i])[2])
+#         dishes.append((bill_items[i])[1])
+#         clients[(bill_items[i])[0]] = clients[(bill_items[i])[0]] + dishes
+#         price_all[(bill_items[i])[0]] = price_all[(bill_items[i])[0]] + price
+
+final_bill = {}
+
+# for name, dish, price in bill_items: # -> ['Tom', "calamari', 13]
+for bill in bill_items: # -> ['Tom', "calamari', 13]
+    name, dish, price = bill # -> ['Tom', "calamari', 13]
+    # name = bill[0]
+    # dish = bill[1]
+    # price = bill[2]
+
+    if name in final_bill:
+        final_bill[name]['potrawy'].append(dish)
+        final_bill[name]['cena'] += price
     else:
-        price += float((bill_items[i])[2])
-        dishes.append((bill_items[i])[1])
-        clients[(bill_items[i])[0]] = clients[(bill_items[i])[0]] + dishes
-        price_all[(bill_items[i])[0]] = price_all[(bill_items[i])[0]] + price
+        final_bill[name] = {'potrawy': [dish], 'cena': price}
 
-bill = {}
-customers = clients.keys()
-for name in customers:
-    bill.update({name : {'dishes' : clients[name], 'cena' : price_all[name]}})
+print(final_bill)
 
-print(bill)
+# customers = clients.keys()
+#for name in customers:
+#    bill.update({name: {'dishes': clients[name], 'cena': price_all[name]}})
+
+#print(bill)
+
+
+a = 1
+b = 2
+a, b = b, a

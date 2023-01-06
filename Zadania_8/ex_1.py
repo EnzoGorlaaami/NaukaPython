@@ -11,15 +11,6 @@
 # * *
 # *
 
-# x = ['*', '* *', '* * *', '* * * *',]
-# for i in x:
-#     print(i)
-#
-# print()
-#
-# x.sort(reverse= True)
-# for i in x:
-#     print(i)
 
 
 for i in range(6):

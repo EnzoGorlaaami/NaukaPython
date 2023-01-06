@@ -16,16 +16,22 @@
 weather = {}
 
 while True:
-    town = input('Podaj Miasto: ')
-    if town != "":
-        precipitation = int(input('Podaj opady dla danego miasta: '))
-        if weather.get(town, 1) == 1:
-            weather[town] = precipitation
-            print(f'Dodano {town} z iloscia opadow {precipitation}.')
-        else:
-            weather[town] = weather[town] + precipitation
-            print(f'Dodano ilosc opadow {precipitation} do miasta {town}.')
-    else:
+    #town = input('Podaj Miasto: ')
+    line = input('Podaj Miasto i opady: ')
+    if line == "":
         print(weather)
         break
+    town, precipitation = line.split()# 'Bosotn 12' -> [Boston, 12]
+    # team = line[0]
+    # precipitation = line[1]
+    precipitation = int(precipitation)
+
+    #precipitation = int(input('Podaj opady dla danego miasta: '))
+    if weather.get(town) is None:
+        weather[town] = precipitation
+        print(f'Dodano {town} z iloscia opadow {precipitation}.')
+    else:
+        weather[town] += precipitation
+        print(f'Dodano ilosc opadow {precipitation} do miasta {town}.')
+
 
