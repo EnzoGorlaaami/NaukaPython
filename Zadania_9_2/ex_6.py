@@ -1,4 +1,4 @@
-a = [2, 6, 22, 31, -21, 0, 1, 8, 9, 10]
+a = [2, 6, 22, 31, -21, -150, 1, 8, 9, 111]
 
 def list_filter(numb_list):
     check_list = []
@@ -6,7 +6,7 @@ def list_filter(numb_list):
         return "Zla ilosc elementow w liscie"
     else:
         for numb in numb_list:
-            if numb <= -10 or numb >= 10:
+            if -99 <= numb <= -10 or 10 <= numb <= 99:
                 check_list.append(numb)
 
         return f'Liczby dwucyfrowe to: {check_list}. '

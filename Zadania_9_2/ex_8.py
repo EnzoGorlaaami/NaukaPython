@@ -6,8 +6,11 @@
 #print(abs(-5)) # 5
 
 def pointer_angle(hour, minute):
-    hour = hour * 30
-    minute = minute * 6
-    return f'Kat miedzy wskazowkami to {abs(hour - minute)} stopni.'
+    hour_angle = hour * 30
+    minute_angle = minute * 6
+    return f'Kat miedzy wskazowkami to {abs(hour_angle - minute_angle)} stopni.'
 
-print(pointer_angle(hour=int(input('Podaj godzine: ')),minute=int(input('Podaj minute: '))))
+
+input_hour = int(input('Podaj godzine: '))
+input_minute = int(input('Podaj minute: '))
+print(pointer_angle(input_hour, input_minute))

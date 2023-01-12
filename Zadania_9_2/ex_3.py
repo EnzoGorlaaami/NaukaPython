@@ -6,12 +6,13 @@
 
 def fizz_buzz(numb):
     if numb % 5 == 0 and numb % 3 == 0:
-        print('FizzBuzz')
+        return 'FizzBuzz'
     elif numb % 5 == 0:
-        print('Buzz')
+        return 'Buzz'
     elif numb % 3 == 0:
-        print('Fizz')
+        return 'Fizz'
     else:
-        print(numb)
+        return numb
 
-fizz_buzz(int(input('Podaj liczbe: ')))
+
+print(fizz_buzz(int(input('Podaj liczbe: '))))
